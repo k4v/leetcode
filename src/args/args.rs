@@ -9,5 +9,5 @@ pub(crate) struct LcArgs {
 
     /// input file to read use cases
     #[argh(option, short='f')]
-    input_file: String
+    input_file: Option<String>
 }
