@@ -1,5 +1,7 @@
 use std::path::Path;
 
+use crate::common::solutions::{Error, Solution};
+
 type Input = Vec<(u8, u8)>;
 type Output = Vec<(u8, u8)>;
 
@@ -7,16 +9,28 @@ pub struct P56 {
     test_cases: Vec<Input>
 }
 
+impl Solution for P56 {
+    type Input = Input;
+    type Output = Output;
+
+    fn read(input_file: &Path) -> Result<Vec<Input>, Error> {
+        Ok(Vec::<Input>::new())
+    }
+
+    fn solve(&self) -> Result<Vec<Output>, Error> {
+        let mut results = vec![];
+        for input in &self.test_cases {
+            results.push(self.merge(input));
+        }
+
+        return Ok(results);
+    }
+}
+
 impl P56 {
     pub fn new(input_file: &Path) -> P56 {
         return Self {
-            test_cases: vec![]
-        }
-    }
-
-    pub fn run(&self) {
-        for test_case in &self.test_cases {
-            self.merge(test_case);
+            test_cases: P56::read(input_file).unwrap()
         }
     }
 
