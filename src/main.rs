@@ -11,9 +11,17 @@ fn main() {
     let lc_args: LcArgs = argh::from_env();
     println!("{:?}", lc_args);
 
-    let p56 = problems::p56::p56::P56::new(Path::new(&lc_args.input_file));
-    match p56.solve() {
-        Ok(outputs) => println!("Problem {} solved", lc_args.problem),
-        Err(err) => println!("Error solving problem {}: {:?}", lc_args.problem, err)
-    }
+    match lc_args.problem {
+        56 => {
+            let results = problems::p56::p56::P56::new(Path::new(&lc_args.input_file)).solve();
+            println!("{results:?}");
+        },
+        2685 => {
+            let results = problems::p2685::p2685::P2685::new(Path::new(&lc_args.input_file)).solve();
+            println!("{results:?}");
+        },
+        _ => {
+            println!("Unrecognized problem ID")
+        }
+    }    
 }
