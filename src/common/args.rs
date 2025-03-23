@@ -5,7 +5,7 @@ use argh::FromArgs;
 pub(crate) struct LcArgs {
     /// problem ID in Leetcode
     #[argh(option, short='p')]
-    pub problem: u8,
+    pub problem: usize,
 
     /// input file to read use cases
     #[argh(option, short='f')]

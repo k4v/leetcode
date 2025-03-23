@@ -8,7 +8,7 @@ pub struct Error {
 pub trait Solution {
     // Data type of each input test case
     type Input;
-    type Output;
+    type Output: std::fmt::Debug;
 
     // Read file containing list of input test cases, and returned parsed test cases
     fn read(input_file: &Path) -> Result<Vec<Self::Input>, Error>;
