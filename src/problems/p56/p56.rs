@@ -23,7 +23,7 @@ impl Solution for P56 {
             results.push(self.merge(input));
         }
 
-        return Ok(results);
+        Ok(results)
     }
 }
 

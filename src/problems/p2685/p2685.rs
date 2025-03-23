@@ -25,7 +25,7 @@ impl Solution for P2685 {
             results.push(self.count_complete_components(input));
         }
 
-        return Ok(results);
+        Ok(results)
     }
 }
 
