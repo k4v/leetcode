@@ -12,6 +12,10 @@ fn main() {
     println!("{:?}", lc_args);
 
     match lc_args.problem {
+        1 => {
+            let results = problems::p1::p1::P1::new(Path::new(&lc_args.input_file)).solve();
+            println!("{results:?}");
+        },
         56 => {
             let results = problems::p56::p56::P56::new(Path::new(&lc_args.input_file)).solve();
             println!("{results:?}");
